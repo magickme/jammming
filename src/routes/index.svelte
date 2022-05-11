@@ -1,2 +1,74 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<svelte:head>
+    <title>Jammming</title>
+</svelte:head>
+
+<script>
+    import SearchBar from './SearchBar.svelte';
+    import SearchResults from './SearchResults.svelte';
+    import Playlist from './Playlist.svelte';
+</script>
+
+<div>
+    <h1>Ja<span class="highlight">mmm</span>ing</h1>
+    <div class="App">
+      <SearchBar />
+      <div class="App-playlist">
+        <SearchResults />
+        <Playlist />
+      </div>
+    </div>
+</div>
+
+<style>
+      body,
+html,
+#root {
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  padding: .77rem 0;
+  background-color: #010c3f;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.88rem;
+  color: #fff;
+}
+
+h1 .highlight {
+  color: #6c41ec;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.55rem;
+}
+.App {
+  height: 100%;
+  padding: 0 17% 10% 17%;
+  background-image: url('/Images/background_photo_desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
+.App-playlist {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1020px) {
+  .App-playlist {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+</style>
